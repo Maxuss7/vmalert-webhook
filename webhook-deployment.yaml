@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vmalert-webhook-server 
+  labels:
+    app: vmalert-webhook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vmalert-webhook
+  template:
+    metadata:
+      labels:
+        app: vmalert-webhook
+    spec:
+      containers:
+        - name: webhook
+          image: <my-vmalert-webhook-image>
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: VICTORIALOGS_ENDPOINT
+              value: "http://victoria-logs-victoria-logs-single-server.victoria.svc.cluster.local:9428/select/logsql/query"
+            - name: SLACK_ENDPOINT
+              value: "https://hooks.slack.com/services/my-api"
