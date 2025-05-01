@@ -5,9 +5,12 @@ import (
 	"net/http"
 
 	"github.com/bonzonkim/vmalert-webhook/types"
+	"github.com/bonzonkim/vmalert-webhook/vlog"
+	"github.com/bonzonkim/vmalert-webhook/webhook"
 	"github.com/gin-gonic/gin"
 )
 
+// main function    Run Server on Port 8080
 func main() {
 	r := gin.Default()
 
@@ -25,13 +28,13 @@ func main() {
 			desc := alert.Annotations["description"]
 			log.Printf("[ALERT] Status: %s | Desc: %s | Query: %s", alert.Status, desc, query)
 
-			logs, err := QueryVictoriaLogs(query)
+			logs, ingressURL, err := vlog.QueryVlog(query)
 			if err != nil {
 				log.Printf("Failed to query VictoriaLogs: %v", err)
 				continue
 			}
 
-			if err := SendSlackMessage(alert, logs); err != nil {
+			if err := webhook.SendSlackMessage(alert, logs, ingressURL); err != nil {
 				log.Printf("Failed to send Slack message: %v", err)
 			}
 		}
