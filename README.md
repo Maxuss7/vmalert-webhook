@@ -35,7 +35,8 @@ The webhook server retrieves endpoints from environment variables. You can use a
    ```sh
    echo "dotenv" > .envrc
    ```
-3. Create a `.env` file and define `VICTORIALOGS_ENDPOINT`, `SLACK_ENDPOINT`
+3. Create a `.env` file and define `VICTORIALOGS_ENDPOINT`, `SLACK_ENDPOINT`.  
+   If you have an Ingress Endpoint of `VictoriaLogs`, also set `VLOG_INGRESS` in `.env` file.
    Example:  
    ```sh
    SLACK_ENDPOINT=https://my-endpoint.com
