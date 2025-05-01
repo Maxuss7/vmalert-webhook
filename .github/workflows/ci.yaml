@@ -13,7 +13,7 @@ on:
       - "src/**"
     
 jobs:
-  test:
+  ci:
     runs-on: ubuntu-latest
 
     defaults:
