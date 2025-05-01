@@ -72,6 +72,8 @@ env:
     value: "http://victoria-logs-victoria-logs-single-server.victoria.svc.cluster.local:9428/select/logsql/query"
   - name: SLACK_ENDPOINT
     value: "https://hooks.slack.com/services/my-api"
+  - name: VLOG_INGRESS
+    value: "https://my-vlog.ingress.com"
 ```
 Modify the values as needed.
 
