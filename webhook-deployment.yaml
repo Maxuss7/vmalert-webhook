@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
         - name: webhook
+          # if you don't want to build your own image, use mine. flrhyme9/vmalert-webhook:1.0.0
           image: <my-vmalert-webhook-image>
           imagePullPolicy: Always
           ports:
