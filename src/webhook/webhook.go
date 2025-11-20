@@ -10,7 +10,7 @@ import (
 )
 
 // SendSlackMessage function    send Alert to Slack with Logs, vmui url
-// if logs is over 20, send vmui url only.
+// if logs is over 70, send vmui url only.
 func SendSlackMessage(alert types.Alert, logs []string, logUrl string) error {
 	attachment := slack.Attachment{}
 
@@ -29,7 +29,7 @@ func SendSlackMessage(alert types.Alert, logs []string, logUrl string) error {
 	}
 	if len(logs) > 0 {
 		desc += "\n*Recent Logs:*\n"
-		max := min(len(logs), 20)
+		max := min(len(logs), 70)
 		for _, line := range logs[:max] {
 			desc += fmt.Sprintf("• `%s`\n", line)
 		}
