@@ -1,4 +1,4 @@
-module github.com/bonzonkim/vmalert-webhook
+module github.com/Maxuss7/vmalert-webhook
 
 go 1.24.1
 

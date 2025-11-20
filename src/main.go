@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/bonzonkim/vmalert-webhook/types"
-	"github.com/bonzonkim/vmalert-webhook/vlog"
-	"github.com/bonzonkim/vmalert-webhook/webhook"
+	"github.com/Maxuss7/vmalert-webhook/types"
+	"github.com/Maxuss7/vmalert-webhook/vlog"
+	"github.com/Maxuss7/vmalert-webhook/webhook"
 	"github.com/gin-gonic/gin"
 )
 

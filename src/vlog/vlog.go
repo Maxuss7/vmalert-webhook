@@ -11,8 +11,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/bonzonkim/vmalert-webhook/types"
-	"github.com/bonzonkim/vmalert-webhook/util"
+	"github.com/Maxuss7/vmalert-webhook/types"
+	"github.com/Maxuss7/vmalert-webhook/util"
 )
 
 const defaultLimit = 50

@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/ashwanthkumar/slack-go-webhook"
-	"github.com/bonzonkim/vmalert-webhook/types"
-	"github.com/bonzonkim/vmalert-webhook/util"
+	"github.com/Maxuss7/vmalert-webhook/types"
+	"github.com/Maxuss7/vmalert-webhook/util"
 )
 
 // SendSlackMessage function    send Alert to Slack with Logs, vmui url
